@@ -13,20 +13,20 @@ using namespace std;
 void solve() {
   int n;
   cin >> n;
-  int N[n];
+  int a;
 
-  int officers = 0, crimes = 0;
+  int polices = 0, crimes = 0;
 
-  for (int i = 1; i <= n; i++) {
-    cin >> N[i];
+  while (n--) {
+    cin >> a;
 
-    if (N[i] == -1) {
-      if (!officers)
+    if (a == -1) {
+      if (!polices)
         crimes++;
       else
-        officers--;
+        polices--;
     } else
-      officers += N[i];
+      polices += a;
   }
   cout << crimes;
 }
