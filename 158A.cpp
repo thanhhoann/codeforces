@@ -11,21 +11,25 @@ using namespace std;
 #define db(x) cout << #x << " = " << x << endl;
 
 void solve() {
-  int a, b;
-  cin >> a >> b;
+  int n, k;
+  cin >> n >> k;
 
+  vector<int> N;
   int count = 0;
-
-  while (a < b) {
-    a *= 3;
-    b *= 2;
-    count++;
+  int num;
+  for (int i = 0; i < n; i++) {
+    cin >> num;
+    N.push_back(num);
   }
 
-  if (a == b)
-    cout << count + 1;
-  else
-    cout << count;
+  int max = N[k - 1];
+
+  for (int i = 0; i < n; i++) {
+    if (N[i] >= max && N[i] > 0)
+      count++;
+  }
+
+  cout << count;
 }
 
 int main() {

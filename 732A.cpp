@@ -14,18 +14,15 @@ void solve() {
   int k, r;
   cin >> k >> r;
 
-  int count = 1;
-  int total = 0;
+  for (int i = 1; i <= 10; i++) {
+    int a = k * i;
+    int b = (a - r);
 
-  bool flag = true;
-
-  while (flag) {
-    total = count * k;
-    count++;
-    if (total % 10 == 0 || (total - r) % 10 == 0)
-      flag = false;
+    if (a % 10 == 0 || b % 10 == 0) {
+      cout << i;
+      return;
+    }
   }
-  cout << count - 1;
 }
 
 int main() {

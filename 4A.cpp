@@ -13,24 +13,26 @@ using namespace std;
 void solve() {
   int n;
   cin >> n;
-  string s;
-  int sum = 0;
-  while (n--) {
-    cin >> s;
 
-    bool isPlus = false;
+  int temp = 2;
+  bool flag = false;
 
-    for (auto const c : s) {
-      if (c == '+') {
-        isPlus = true;
-        break;
-      }
-    }
-
-    isPlus == true ? sum++ : sum--;
+  if (n <= temp) {
+    flag = true;
   }
 
-  cout << sum;
+  while (temp < n) {
+    temp += 2;
+    if ((n - temp) % 2 != 0) {
+      flag = true;
+    }
+  }
+
+  if (flag == true) {
+    cout << "NO";
+  } else {
+    cout << "YES";
+  }
 }
 
 int main() {

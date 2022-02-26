@@ -14,16 +14,20 @@ void solve() {
   string s;
   cin >> s;
 
-  int count = 0;
+  string a;
+  for (auto const c : s) {
+    char ch = tolower(c);
+    if (ch == 'a' || ch == 'e' || ch == 'u' || ch == 'i' || ch == 'o' ||
+        ch == 'y') {
+      continue;
+    } else {
+      a += '.';
+      a += ch;
+    }
+  }
 
-  sort(s.begin(), s.end());
-
-  for (int i = 0; i < s.length(); i++)
-    if (s[i] == s[i + 1])
-      count++;
-
-  (s.length() - count) % 2 == 1 ? cout << "IGNORE HIM!"
-                                : cout << "CHAT WITH HER!";
+  for (const auto c : a)
+    cout << c;
 }
 
 int main() {

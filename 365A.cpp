@@ -14,29 +14,21 @@ void solve() {
   int n, k;
   cin >> n >> k;
 
-  string S[n], s;
+  int ans = 0;
   for (int i = 0; i < n; i++) {
+    string s;
     cin >> s;
-    S[i] = s;
-  }
 
-  int res = 0;
-
-  for (int i = 0; i < n; i++) {
     int count = 0;
-
     for (int j = 0; j <= k; j++) {
-      string num = to_string(j);
-      if (S[i].find(num) != -1) {
+      if (s.find(to_string(j)) != -1)
         count++;
-      }
     }
-
     if (count == k + 1) {
-      res++;
+      ans++;
     }
   }
-  cout << res;
+  cout << ans;
 }
 
 int main() {

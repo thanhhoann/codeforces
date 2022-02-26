@@ -11,25 +11,24 @@ using namespace std;
 #define db(x) cout << #x << " = " << x << endl;
 
 void solve() {
-  int n;
+  int n, a, b, A[1000000], B[1000000];
   cin >> n;
-
-  int L[n], R[n];
-
-  for (int i = 1; i <= n; i++) {
-    cin >> L[i] >> R[i];
-  }
-
   int count = 0;
 
-  for (int i = 1; i <= n; i++) {
-    for (int j = i; j <= n; j++) {
-      if (L[i] == R[j])
-        count++;
-      if (R[i] == L[j])
+  for (int i = 0; i < n; i++) {
+    cin >> a;
+    A[i] = a;
+    cin >> b;
+    B[i] = b;
+  }
+
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (A[i] == B[j])
         count++;
     }
   }
+
   cout << count;
 }
 
