@@ -1,16 +1,12 @@
 #include <algorithm>
 #include <cmath>
 #include <iostream>
-#include <map>
-#include <set>
 #include <string>
 #include <vector>
 
 using namespace std;
-#define ll long long
-#define db(x) cout << #x << " = " << x << endl;
 
-void SieveOfEratosthenes(int n) { // print prime numbers _ O(1)
+void SieveOfEratosthenes(int n) {
   if (n <= 1)
     cout << "n must be greater than 1 !";
   else {
